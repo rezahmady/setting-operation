@@ -35,5 +35,7 @@
                 "SettingOperation": "Rezahmady\\SettingOperation\\Facades\\SettingOperation"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
