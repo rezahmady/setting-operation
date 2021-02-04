@@ -9,6 +9,7 @@
     }],
     "homepage": "https://github.com/rezahmady/setting-operation",
     "keywords": ["Laravel", "SettingOperation", "backpackforlaravel"],
+    "minimum-stability": "dev",
     "require": {
         "backpack/crud": "^4.0.0"
     },
@@ -35,7 +36,5 @@
                 "SettingOperation": "Rezahmady\\SettingOperation\\Facades\\SettingOperation"
             }
         }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }
