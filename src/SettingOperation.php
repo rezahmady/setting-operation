@@ -84,11 +84,8 @@ trait SettingOperation
      * @return HTTP 302 redirct back to crud list
      */
     public function saveSetting(Request $request, $id)
-    {
-        unset($request['_token']);
-        unset($request['_method']);
-        unset($request['http_referrer']);
-        unset($request['current_tab']);
+    {        
+        $fields = $request->except(['_token', '_method','http_referrer' ,'current_tab']);
        
         $this->crud->hasAccessOrFail('setting');
 
@@ -98,12 +95,12 @@ trait SettingOperation
 
         if($setting != null) {
             $setting->update([
-                'fields' => json_encode($request->all())
+                'fields' => json_encode($fields)
             ]);
         } else {
             $setting_model::create([
                 'key' => $id,
-                'fields' => json_encode($request->all())
+                'fields' => json_encode($fields)
             ]);
         }
 
