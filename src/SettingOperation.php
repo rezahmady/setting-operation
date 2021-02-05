@@ -51,7 +51,7 @@ trait SettingOperation
             $this->crud->addButton('top', 'setting', 'view', 'crud::buttons.btn-setting', 'end');
         });
 
-        $this->model = config('setting-operation.setting_model_class', \Rezahmady\SettingOption\app\Models\SettingOption::class);
+        $this->model = config('setting-operation.setting_model_class', \Rezahmady\SettingOperation\app\Models\SettingOperation::class);
     }   
 
     /**
@@ -67,7 +67,7 @@ trait SettingOperation
         $this->data['entry'] = $this->crud->model->getTable();
         $this->crud->setModel($this->model);
         $this->data['crud'] = $this->crud;
-        $this->data['title'] = trans('backpack::setting-operation.settings').' '.($this->crud->getTitle() ?? mb_ucfirst($this->crud->entity_name));
+        $this->data['title'] = trans('setting-operation::setting-operation.settings').' '.($this->crud->getTitle() ?? mb_ucfirst($this->crud->entity_name));
 
         $this->setupSettingOperation();
 
@@ -107,7 +107,7 @@ trait SettingOperation
             ]);
         }
 
-        Alert::success(trans("backpack::setting-operation.saved_successfully"))->flash();
+        Alert::success(trans("setting-operation::setting-operation.saved_successfully"))->flash();
         return redirect()->back();
     }
 

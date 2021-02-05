@@ -4,7 +4,7 @@
 	$defaultBreadcrumbs = [
 	trans('backpack::crud.admin') => url(config('backpack.base.route_prefix'), 'dashboard'),
 	$crud->entity_name_plural => url($crud->route),
-	trans('backpack::crud.settings') => false,
+	trans('setting-operation::setting-operation.settings') => false,
 	];
 
 	$settings = $crud->model->where('key', $entry)->first();
@@ -28,7 +28,7 @@
 	<section class="container-fluid">
 	  <h2>
         <span class="text-capitalize">{!! $crud->getHeading() ?? $crud->entity_name_plural !!}</span>
-        <small>{!! $crud->getSubheading() ?? trans('backpack::setting-operation.settings') !!}.</small>
+        <small>{!! $crud->getSubheading() ?? trans('setting-operation::setting-operation.settings') !!}.</small>
 
         @if ($crud->hasAccess('setting'))
           <small><a href="{{ url($crud->route) }}" class="d-print-none font-sm"><i class="la la-angle-double-{{ config('backpack.base.html_direction') == 'rtl' ? 'right' : 'left' }}"></i> {{ trans('backpack::crud.back_to_all') }} <span>{{ $crud->entity_name_plural }}</span></a></small>
@@ -64,7 +64,7 @@
 
 				<button type="submit" class="btn btn-success">
 					<span class="la la-save" role="presentation" aria-hidden="true"></span> &nbsp;
-					<span > {{ trans('backpack::setting-operation.save_action') }}</span>
+					<span > {{ trans('setting-operation::setting-operation.save_action') }}</span>
 				</button>
 
 				@if(!$crud->hasOperationSetting('showCancelButton') || $crud->getOperationSetting('showCancelButton') == true)
