@@ -4,7 +4,7 @@ namespace Rezahmady\SettingOperation;
 
 class Setting
 {
-    public static function get($name, $default)
+    public static function get($name, $default = '')
     {
         $model = config('setting-operation.setting_model_class', \Rezahmady\SettingOperation\app\Models\SettingOperation::class);
         $arr = explode('.',$name);
