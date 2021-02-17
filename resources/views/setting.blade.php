@@ -8,7 +8,8 @@
 	];
 
 	$settings = $crud->model->where('key', $entry)->first();
-	$fields = json_decode($settings->fields);
+	
+	$fields = ($settings) ? json_decode($settings->fields) : [];
 
 	$newFields = $crud->fields();
 
