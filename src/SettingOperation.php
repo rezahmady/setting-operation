@@ -48,7 +48,7 @@ trait SettingOperation
 
         $this->crud->operation(['list'], function () {
             // add a button in the line stack
-            $this->crud->addButton('top', 'setting', 'view', 'crud::buttons.btn-setting', 'end');
+            $this->crud->addButton('top', 'setting', 'view', 'setting-operation::btn-setting', 'end');
         });
 
         $this->model = config('setting-operation.setting_model_class', \Rezahmady\SettingOperation\app\Models\SettingOperation::class);
