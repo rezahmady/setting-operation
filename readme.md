@@ -65,8 +65,13 @@ The backpack has a settings add-on that I don't think is practical at all.Funny,
 
     use Rezahmady\SettingOperation\Setting;
     
-    Setting::get(CRUD_TABLE_NAME.FIELD_NAME);
+    Setting::get(CRUD_TABLE_NAME.FIELD_NAME, DEFAULT);
 
+**fast update field** To update or set new field you can use this:
+
+    use Rezahmady\SettingOperation\Setting;
+    
+    Setting::set(CRUD_TABLE_NAME.FIELD_NAME, VALUE);
 
 
 ## Change log
