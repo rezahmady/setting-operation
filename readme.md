@@ -1,6 +1,6 @@
 # SettingOperation
 
-Backpack Setting Operation to save customize settings for each CRUD. Uses Backpackforlaravel. Works on Laravel 5.2 to Laravel 8. 
+Backpack Setting Operation to save customize settings for each CRUD. Uses Backpackforlaravel. Works on Laravel 5.2 to Laravel 10. 
 
 Backpackforlaravel is cool admin panel for laravel.
 
