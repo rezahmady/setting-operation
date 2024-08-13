@@ -11,7 +11,7 @@ class Setting
         $arr = explode('.',$name);
         $key = $arr[0];
         $field = $arr[1];
-        $settings = Cache::rememberForever("settingOperation::$key", function () {
+        $settings = Cache::rememberForever("settingOperation::$key", function () use ($key) {
             $model = config('setting-operation.setting_model_class', \Rezahmady\SettingOperation\app\Models\SettingOperation::class);
             return $model::where('key', $key)->first();
         });
@@ -29,7 +29,7 @@ class Setting
         $arr = explode('.',$name);
         $key = $arr[0];
         $field = $arr[1];
-        $settings = Cache::rememberForever("settingOperation::$key", function () {
+        $settings = Cache::rememberForever("settingOperation::$key", function () use ($key) {
             $model = config('setting-operation.setting_model_class', \Rezahmady\SettingOperation\app\Models\SettingOperation::class);
             return $model::where('key', $key)->first();
         });
