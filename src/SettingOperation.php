@@ -86,8 +86,8 @@ trait SettingOperation
      */
     public function saveSetting(Request $request, $id)
     {        
-        Cache::forget('key');
         $fields = $request->except(['_token', '_method','http_referrer' ,'current_tab']);
+        Cache::forget("settingOperation::$id");
        
         $this->crud->hasAccessOrFail('setting');
 
